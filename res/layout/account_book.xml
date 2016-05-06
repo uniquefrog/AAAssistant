@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_main"
+    android:orientation="vertical" >
+
+   <!--  <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_title"
+        android:gravity="center"
+        android:text="@string/title"
+        android:textColor="#000000"
+        android:textSize="28sp" /> -->
+    <include android:id="@+id/topTitle" layout="@layout/top_title"/>
+
+    <LinearLayout
+        android:id="@+id/layBody"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <ListView
+            android:id="@+id/listviewAccountBookList"
+            style="@style/StyleListview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <include layout="@layout/bottom_layout" />
+
+    <include layout="@layout/menu_layout" />
+
+</LinearLayout>

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_main" >
+
+    <include
+        android:id="@+id/topTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        layout="@layout/top_title" />
+
+    <TableLayout
+        android:id="@+id/TableLayoutButtonBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:stretchColumns="0,1" >
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="保存"
+                android:textColor="#000000" />
+
+            <Button
+                android:id="@+id/btnCancel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="取消"
+                android:textColor="#000000" />
+        </TableRow>
+    </TableLayout>
+
+    <ScrollView
+        android:id="@+id/ScrollViewMain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/TableLayoutButtonBox"
+        android:layout_below="@id/topTitle" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/box"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <ImageView
+                    android:id="@+id/imgSelectAccountBook"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/account_book_small_icon" />
+
+                <Button
+                    android:id="@+id/btnSelectAccountBook"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="选择账本"
+                    android:textColor="#000000" />
+
+                <EditText
+                    android:id="@+id/etAccountBookName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@id/btnSelectAccountBook"
+                    android:layout_toRightOf="@id/imgSelectAccountBook"
+                    android:focusable="false"
+                    android:textColor="#000000" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <ImageView
+                    android:id="@+id/imgSelectAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/payout_small_icon" />
+
+                <Button
+                    android:id="@+id/btnSelectAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="输入金额"
+                    android:textColor="#000000" />
+
+                <EditText
+                    android:id="@+id/etAmount"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@id/btnSelectAmount"
+                    android:layout_toRightOf="@id/imgSelectAmount"
+                    android:hint="请输入金额"
+                    android:maxLength="5"
+                    android:numeric="decimal"
+                    android:textColor="#000000"
+                    android:textColorHint="#8A8A8A" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <ImageView
+                    android:id="@+id/imgSelectCategory"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/category_small_icon" />
+
+                <Button
+                    android:id="@+id/btnSelectCategory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="选择类别"
+                    android:textColor="#000000" />
+
+                <AutoCompleteTextView
+                    android:id="@+id/actvCategoryName"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@id/btnSelectCategory"
+                    android:layout_toRightOf="@id/imgSelectCategory"
+                    android:completionThreshold="1"
+                    android:dropDownWidth="fill_parent"
+                    android:hint="请输入或选择消费类别"
+                    android:singleLine="true"
+                    android:textColor="#ff000000"
+                    android:textColorHint="#8A8A8A" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <Button
+                    android:id="@+id/btnSelectPayoutDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="选择日期"
+                    android:textColor="#000000" />
+
+                <EditText
+                    android:id="@+id/etPayoutDate"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@id/btnSelectPayoutDate"
+                    android:focusable="false"
+                    android:textColor="#000000" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <Button
+                    android:id="@+id/btnSelectPayoutType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="计算方式"
+                    android:textColor="#000000" />
+
+                <EditText
+                    android:id="@+id/etPayoutType"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@id/btnSelectPayoutType"
+                    android:focusable="false"
+                    android:textColor="#000000" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <Button
+                    android:id="@+id/btnSelectUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="选择消费人"
+                    android:textColor="#000000" />
+
+                <EditText
+                    android:id="@+id/etPayoutUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@id/btnSelectUser"
+                    android:focusable="false"
+                    android:hint="请选择消费人，第一位为付款人"
+                    android:singleLine="false"
+                    android:textColor="#000000"
+                    android:textColorHint="#8A8A8A" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <EditText
+                    android:id="@+id/etComment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="fill_horizontal"
+                    android:hint="请输入消费心得或备注"
+                    android:lines="7"
+                    android:maxLength="301"
+                    android:textColor="#000000"
+                    android:textColorHint="#8A8A8A" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

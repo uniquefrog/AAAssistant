@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="horizontal"
+  >
+  	<RelativeLayout android:id="@+id/relativeLayoutDate"
+  	android:layout_width="match_parent"
+  	android:layout_height="wrap_content"
+  	android:background="#ff647a97"
+  	android:visibility="gone"
+  	>
+  		<TextView android:id="@+id/tvPayoutDate"
+  		android:layout_width="wrap_content"
+  		android:layout_height="wrap_content"
+  		android:paddingLeft="5px"
+		android:paddingTop="2px" 
+		android:paddingRight="5px"
+		android:paddingBottom="2px"
+		android:textSize="11px" 
+  		android:textColor="#ffffffff"
+  		android:text="2016.4.5"
+  		/>
+  		<TextView android:id="@+id/tvTotal"
+  		android:layout_width="wrap_content"
+  		android:layout_height="wrap_content"
+  		android:layout_alignParentRight="true"
+  		android:paddingLeft="5px"
+		android:paddingTop="2px" 
+		android:paddingRight="5px"
+		android:paddingBottom="2px"
+		android:textSize="11px" 
+  		android:textColor="#ffffffff"
+  		android:text="默认账本"
+  		/>
+  	</RelativeLayout>
+  	<RelativeLayout android:layout_width="wrap_content"
+  	android:layout_height="wrap_content"
+  	android:layout_below="@id/relativeLayoutDate"
+  	>
+		<ImageView android:id="@+id/imgPayoutIcon"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:paddingLeft="5px"
+		android:paddingTop="12px"
+		/>
+		<TextView android:id="@+id/tvPayoutName"
+		android:paddingTop="12px"
+		android:textSize="16px"
+		android:textColor="#ff000000"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_toRightOf="@id/imgPayoutIcon"
+		android:ellipsize="marquee"
+		android:singleLine="true"
+		android:text="北京账本"
+		/>
+		<TextView android:id="@+id/Total"
+		android:textColor="#ff000000"
+		android:paddingRight="5dp"
+		android:paddingTop="10dp"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentRight="true"
+		android:text="5555"
+		/>
+		<TextView android:id="@+id/tvPayoutUserAndPayoutType"
+		android:textColor="#ff666666"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/tvPayoutName"
+		android:layout_toRightOf="@id/imgPayoutIcon"
+		android:text="个人"
+		/>
+	</RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content"
+  android:padding="6px"
+  android:orientation="vertical"
+  >
+  <EditText android:id="@+id/edtvAccountBookName"
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content"
+  android:hint="版本名称"
+  android:maxLength="20"
+  />
+  <CheckBox android:id="@+id/chkIsDefault"
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content"
+  android:layout_below="@id/edtvAccountBookName"
+  android:text="设置为默认账本"
+  android:textColor="#ffffffff"
+  />
+</LinearLayout>

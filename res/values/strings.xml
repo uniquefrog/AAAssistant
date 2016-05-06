@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AA费用小助手</string>
+    <string name="title">AA费用小助手</string>
+    <string name="bottomWelcome">欢迎您使用AA费用小助手！</string>
+    <string name="title_activity_user">UserActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_user_add_or_update">UserAddOrUpdateActivity</string>
+    <string name="editTvUserHintName">人员名称</string>
+    <string name="account_book_activity">AccountBookActivity</string>
+    <string name="title_activity_category">CategoryActivity</string>
+    <string name="title_activity_category_add_or_edit">CategoryAddOrEditActivity</string>
+    <string name="title_activity_payout">PayoutActivity</string>
+    <string name="title_activity_payout_add_or_edit">PayoutAddOrEditActivity</string>
+    <string name="title_activity_statistic">StatisticActivity</string>
+    <string name="title_activity_category_chart">CategoryChartActivity</string>
+
+</resources>
