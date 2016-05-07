@@ -47,8 +47,8 @@ public class PayoutActivity extends ActivityFrame  implements OnSlideMenuListner
 	//the person data
 	List<Payout> payoutDataList;
 	BusinessPayout bussinessPayout;
-	final String TIPMSG="必须是中文英文和数字组成";
-	final String REPEATEDMSG="该用户名已存在，请换个用户名称";
+//	final String TIPMSG="必须是中文英文和数字组成";
+//	final String REPEATEDMSG="该用户名已存在，请换个用户名称";
 	PayoutListViewAdapter adapter;
 	Payout mPayout;
 	Payout selectedPayout;

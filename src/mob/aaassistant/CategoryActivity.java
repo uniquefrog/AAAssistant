@@ -28,6 +28,7 @@ import android.widget.BaseExpandableListAdapter;
 import android.widget.EditText;
 import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.ExpandableListContextMenuInfo;
+import android.widget.ExpandableListView.OnChildClickListener;
 import mob.aaassistant.base.ActivityFrame;
 import mob.aaassistant.bussiness.BussinessCategory;
 import mob.aaassistant.control.SlideMenuItem;
@@ -38,7 +39,9 @@ import mob.aaassistant.utils.RegexTools;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.AdapterView;
 import android.widget.AdapterView.AdapterContextMenuInfo;
+import android.widget.AdapterView.OnItemClickListener;
 
 public class CategoryActivity extends ActivityFrame implements OnSlideMenuListner{
 
@@ -89,7 +92,7 @@ public class CategoryActivity extends ActivityFrame implements OnSlideMenuListne
 		tvTopTitle.setText(titel);
 	}
 	private void initData() {
-		menuDatas=new String[]{"新增类别","统计类别"};
+		menuDatas=new String[]{"新增类别"};//,"统计类别"
 		categoryDataList=new ArrayList<Category>();
 		categoryChildDataList=new ArrayList<Object>();
 		menuDataList=new ArrayList<SlideMenuItem>();
@@ -110,6 +113,31 @@ public class CategoryActivity extends ActivityFrame implements OnSlideMenuListne
 			@Override
 			public void onClick(View v) {
 				finish();				
+			}
+		});
+		
+		eplistviewCategoryList.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				
+				int type = ExpandableListView.getPackedPositionType(position);
+				int groupPosition = ExpandableListView.getPackedPositionGroup(position);
+				SELECTED_TYPE=type;
+				switch (type) {
+				case ExpandableListView.PACKED_POSITION_TYPE_GROUP:
+					selectedCategory = (Category)adapter.getGroup(groupPosition);
+
+					break;
+				case ExpandableListView.PACKED_POSITION_TYPE_CHILD:
+					int childPosition = ExpandableListView.getPackedPositionChild(position);
+					selectedCategory = (Category)adapter.getChild(groupPosition, childPosition);
+					//			Log.i("uniquefrog", "Group:"+groupPosition+"Child:"+childPosition);
+					break;
+				default:
+					break;
+				}
+				
 			}
 		});
 
@@ -144,7 +172,7 @@ public class CategoryActivity extends ActivityFrame implements OnSlideMenuListne
 
 		CreatMenu(menu);
 		menu.add(0, 3, 0, "统计类别");
-		Log.i("uniquefrog", "ChildCountOfGroup:"+adapter.getChildCountOfGroup(groupPosition));
+		//Log.i("uniquefrog", "ChildCountOfGroup:"+adapter.getChildCountOfGroup(groupPosition));
 
 		if(adapter.getChildCountOfGroup(groupPosition) != 0 && selectedCategory.getParentID() == 0)
 		{
@@ -243,14 +271,20 @@ public class CategoryActivity extends ActivityFrame implements OnSlideMenuListne
 			this.startActivityForResult(intent, 1);
 			return;
 		}
-
-		if (pSlideMenuItem.getId() == 1) {
-			List<CategoryTotal> list = businessCategory.CategoryTotalByParentID(selectedCategory.getId());
-			Intent intent = new Intent();
-			intent.putExtra("Total", (Serializable)list);
-			intent.setClass(this, CategoryChartActivity.class);
-			startActivity(intent);
-		}
+//
+//		if (pSlideMenuItem.getId() == 1) {
+//			if (selectedCategory!=null) {
+//				List<CategoryTotal> list = businessCategory.CategoryTotalByParentID(selectedCategory.getId());
+//				Intent intent = new Intent();
+//				intent.putExtra("Total", (Serializable)list);
+//				intent.setClass(this, CategoryChartActivity.class);
+//				startActivity(intent);
+//			}
+//			else{
+//				ShowMsg("请选择一项类别");
+//			}
+//
+//		}
 	}
 	public class CategoryExpandListAdapter extends BaseExpandableListAdapter{
 		Context context;
